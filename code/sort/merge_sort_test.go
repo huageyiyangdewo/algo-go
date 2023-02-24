@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func TestShellSort(t *testing.T)  {
+func TestMergeSort(t *testing.T) {
 	type test struct {
 		input []int
 		want []int
@@ -25,7 +25,7 @@ func TestShellSort(t *testing.T)  {
 
 	for name, tc := range tests {
 		t.Run(name, func(t *testing.T) {
-			got := ShellSort(tc.input)
+			got := MergeSort(tc.input)
 
 			if !reflect.DeepEqual(got, tc.want) {
 				t.Errorf("expected:%#v, got:%#v", tc.want, got)
@@ -56,6 +56,6 @@ func TestShellSort(t *testing.T)  {
 	t.Log("希尔排序花费时间：", time.Now().Sub(now))
 
 	now = time.Now()
-	InsertionSort(sortArr2)
-	t.Log("插入排序花费时间：", time.Now().Sub(now))
+	MergeSort(sortArr2)
+	t.Log("归并排序花费时间：", time.Now().Sub(now))
 }
